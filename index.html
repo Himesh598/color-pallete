@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div id="colorBox">#FFFFFF
+          <br><br><br><br><br><br><br>
+        </div>
+<button onclick="generateColor()">Generate Color</button>
+
+<script>
+function getColor() {
+  let r = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let hex = "#" + r.toString(16).padStart(2, '0') + g.toString(16).padStart(2, '0') + b.toString(16).padStart(2, '0');
+  return { rgb: `rgb(${r}, ${g}, ${b})`, hex: hex };
+}
+
+function generateColor() {
+  let color = getColor();
+  let box = document.getElementById('colorBox');
+  box.style.backgroundColor = color.rgb;
+  box.textContent = color.hex;
+}
+</script>
+    </body>
+</html>
